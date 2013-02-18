@@ -93,9 +93,9 @@ var minipage = function(opts) {
     }
     
     make();
-
-    //shift up to parent offset
-    //shapes.transform("T0,-" + $(opts.container).offset().top);
+    
+    //correct for offset of target
+    shapes.transform("T0,-" + yscale * $(opts.container).offset().top);
         
     return {
         make: function() {
