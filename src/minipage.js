@@ -68,7 +68,7 @@ var minipage = function(opts) {
     
     var xscale = ($(opts.container).width() - opts.margin * 2) / $(opts.target).width(),
         yscale = ($(opts.container).height() - opts.margin * 2) / $(opts.target).height(),
-        paper = Raphael(holder),
+        paper = Raphael(holder, $(opts.container).width(), $(opts.container).height()),
         shapes = paper.set();
 
     function draw(node) {
@@ -103,6 +103,9 @@ var minipage = function(opts) {
         },
         get_shapes: function() {
             return shapes;
+        },
+        get_paper: function() {
+            return paper;
         },
         hover: function(color) {
             shapes.hover(
