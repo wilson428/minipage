@@ -835,20 +835,12 @@ Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.
 
 <script>
 $(document).ready(function() {
-    var m = minipage();
-    m.get_shapes().hover(
-        function() {
-            this.sibling.original = this.sibling.style.backgroundColor;
-            this.sibling.style.backgroundColor = "red";
-        },
-        function() {
-            this.sibling.style.backgroundColor = this.sibling.original;
-        });
+    var m = minipage({
+        textnodes: ["p", "li", "span"]
+    });
+    m.hover("blue");
 });
-
-
 </script>
-        
         
 	</body>
 </html>
